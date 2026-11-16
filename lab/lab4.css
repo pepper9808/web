@@ -1,0 +1,310 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --border-color: #8c8c8c;
+    --line-color: #b3b3b3;
+    --text-dark: #4a4a4a;
+    --accent-gray: #7a7a7a;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f2f5;
+    color: var(--text-dark);
+    padding: 16px 24px 32px;
+}
+
+/* Верхня навігаційна панель для повернення на сайт */
+.top-nav {
+    max-width: 1200px;
+    margin: 0 auto 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.top-nav a {
+    color: #0284c7;
+    text-decoration: none;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основний аркуш планера */
+.planner-sheet {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 3px solid var(--border-color);
+    border-bottom-width: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= ШАПКА ПЛАНЕРА (GRID) ================= */
+.planner-header {
+    display: grid;
+    grid-template-columns: auto minmax(140px, 1fr) minmax(160px, 1.2fr) auto;
+    align-items: end;
+    gap: 20px;
+    padding: 14px 20px 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.main-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 3.2vw, 44px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.header-input-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: 8px;
+    padding-bottom: 4px;
+}
+
+.header-input-group label {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.header-input-group input {
+    width: 100%;
+    min-width: 60px;
+    border: none;
+    border-bottom: 1.5px solid var(--line-color);
+    font-family: inherit;
+    font-size: 13px;
+    color: #1e293b;
+    padding: 2px 4px;
+    background: transparent;
+    outline: none;
+}
+
+.header-input-group input:focus {
+    border-bottom-color: #0284c7;
+}
+
+.header-checks {
+    display: grid;
+    gap: 6px;
+    justify-items: end;
+    padding-bottom: 2px;
+}
+
+.check-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Кастомний вигляд клікабельних чекбоксів */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--border-color);
+    background-color: #ffffff;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #333333;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ================= ГОЛОВНА СІТКА ПЛАНЕРА ================= */
+.planner-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.15fr) repeat(3, minmax(160px, 1fr));
+    grid-template-rows: minmax(270px, 1fr) minmax(270px, 1fr);
+    grid-template-areas:
+        "todo mon tue wed"
+        "todo thu fri wknd";
+}
+
+/* Ліва панель TO DO */
+.todo-column {
+    grid-area: todo;
+    position: relative;
+    padding: 14px 16px 18px;
+    border-right: 2px solid var(--border-color);
+    display: grid;
+    align-content: start;
+    gap: 16px;
+}
+
+.todo-badge {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.todo-section {
+    display: grid;
+    gap: 7px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+}
+
+.task-line {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-line input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    border-bottom: 1.5px solid var(--line-color);
+    font-family: inherit;
+    font-size: 13px;
+    color: #1e293b;
+    padding: 2px 4px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.task-line input[type="text"]:focus {
+    border-bottom-color: #0284c7;
+    background-color: #f8fafc;
+}
+
+/* Закреслення тексту, якщо чекбокс відмічено */
+.task-line input[type="checkbox"]:checked + input[type="text"] {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* ================= КАРТКИ ДНІВ ТИЖНЯ ================= */
+.area-mon  { grid-area: mon; }
+.area-tue  { grid-area: tue; }
+.area-wed  { grid-area: wed; }
+.area-thu  { grid-area: thu; }
+.area-fri  { grid-area: fri; }
+.area-wknd { grid-area: wknd; }
+
+.day-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 10px 12px;
+    border-right: 1.5px solid var(--border-color);
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+/* Прибираємо зайві зовнішні рамки справа та знизу */
+.area-wed,
+.area-wknd .day-card {
+    border-right: none;
+}
+
+.area-thu,
+.area-fri,
+.area-wknd .day-card:last-child {
+    border-bottom: none;
+}
+
+/* Стек для суботи та неділі в одній комірці сітки */
+.weekend-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.day-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.day-header h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-align: center;
+    color: var(--text-dark);
+    padding-left: 14px; /* компенсація чекбокса для ідеального центрування */
+}
+
+/* Декоративний сірий трикутник у лівому верхньому куті дня як у шаблоні */
+.corner-triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 12px solid var(--accent-gray);
+    border-right: 12px solid transparent;
+}
+
+/* Багаторядкове редаговане поле всередині кожного дня */
+.day-notes {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #1e293b;
+    background: transparent;
+    outline: none;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.day-notes:focus {
+    background-color: #f8fafc;
+}
