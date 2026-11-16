@@ -1,0 +1,405 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #0f0f0f;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Головний Flex-контейнер сторінки (ліва панель + правий контент) */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= ЛІВА БІЧНА ПАНЕЛЬ ================= */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e5e5;
+}
+
+.sidebar-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 4px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.logo-text sup {
+    font-size: 10px;
+    color: #606060;
+    margin-left: 2px;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #f2f2f2;
+}
+
+.nav-item.active {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sub-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.nav-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ================= ПРАВА ЧАСТИНА ================= */
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Верхня шапка з пошуком */
+.topbar {
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-spacer {
+    width: 120px;
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    max-width: 640px;
+}
+
+.search-form {
+    display: flex;
+    flex: 1;
+    height: 40px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0 16px;
+    border: 1px solid #cccccc;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #1c62b9;
+}
+
+.search-btn {
+    width: 64px;
+    border: 1px solid #cccccc;
+    background-color: #f8f8f8;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.mic-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mic-btn:hover {
+    background-color: #e5e5e5;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.icon-btn:hover {
+    background-color: #f2f2f2;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #00695c;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Смуга категорій (тегів) */
+.categories-bar {
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+}
+
+.chip {
+    padding: 7px 12px;
+    background-color: #f2f2f2;
+    color: #0f0f0f;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.chip:hover {
+    background-color: #e5e5e5;
+}
+
+.chip.active {
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+/* Основний контент */
+.content {
+    padding: 12px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Сітка відео (4 картки в ряд через Flex-wrap) */
+.videos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 16px;
+}
+
+.video-card {
+    /* Розрахунок ширини для 4 карток в ряд з урахуванням 3 проміжків по 16px */
+    flex: 1 1 calc(25% - 16px);
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.thumbnail-box {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.thumbnail-box img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.video-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.video-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.video-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0f0f0f;
+}
+
+.channel-name,
+.video-stats {
+    font-size: 13px;
+    color: #606060;
+}
+
+/* Секція Shorts (5 карток в ряд) */
+.shorts-section {
+    border-top: 4px solid #e5e5e5;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.shorts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shorts-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.shorts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.short-card {
+    flex: 1 1 calc(20% - 16px);
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.short-card img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.short-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+}
