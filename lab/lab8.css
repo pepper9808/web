@@ -1,0 +1,520 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-text: #21243d;
+    --light-text: #8695a4;
+    --primary-coral: #ff6464;
+    --primary-hover: #e04f4f;
+    --secondary-cyan: #00a8cc;
+    --section-tint: #edf7fa;
+    --border-gray: #e0e0e0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    color: var(--dark-text);
+    background-color: #ffffff;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= ФІКСОВАНИЙ БЕЙДЖ FIGMA ================= */
+.figma-badge {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 1000;
+    background-color: var(--dark-text);
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    box-shadow: 0 8px 20px rgba(33, 36, 61, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.figma-badge a {
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.figma-badge a:hover {
+    text-decoration: underline;
+}
+
+/* ================= ШАПКА ТА МОБІЛЬНЕ БУРГЕР-МЕНЮ ================= */
+.site-header {
+    padding: 22px 0;
+    position: relative;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-link {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--secondary-cyan);
+}
+
+.brand-link:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 102;
+}
+
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--dark-text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-coral);
+}
+
+/* ================= HERO-СЕКЦІЯ ================= */
+.hero-section {
+    padding: 56px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 24px;
+}
+
+.hero-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-coral);
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.hero-avatar {
+    width: 243px;
+    height: 243px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: -6px 12px 0 var(--section-tint);
+}
+
+/* ================= СЕКЦІЯ RECENT POSTS ================= */
+.recent-section {
+    background-color: var(--section-tint);
+    padding: 28px 0 36px;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.view-all {
+    font-size: 16px;
+    color: var(--secondary-cyan);
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.post-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(187, 225, 250, 0.25);
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 16px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.post-text {
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+/* ================= СЕКЦІЯ FEATURED WORKS ================= */
+.works-section {
+    padding: 32px 0 60px;
+}
+
+.works-heading {
+    margin-bottom: 24px;
+}
+
+.works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.work-item {
+    display: grid;
+    grid-template-columns: 246px 1fr;
+    gap: 20px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.work-thumb img {
+    width: 246px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: opacity 0.2s;
+}
+
+.work-thumb:hover img {
+    opacity: 0.9;
+}
+
+.work-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.work-title a:hover {
+    color: var(--primary-coral);
+}
+
+.work-badges {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.year-pill {
+    background-color: #142850;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 2px 12px;
+    border-radius: 16px;
+}
+
+.category-label {
+    font-size: 18px;
+    color: var(--light-text);
+}
+
+.work-desc {
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+/* ================= ФУТЕР ================= */
+.site-footer {
+    padding: 40px 0 54px;
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 32px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.social-links a:hover {
+    color: var(--primary-coral);
+}
+
+.copyright {
+    font-size: 14px;
+}
+
+/* =====================================================================
+   АДАПТАЦІЯ ПІД МОБІЛЬНІ ПРИСТРОЇ (ЗА МАКЕТОМ FIGMA MOBILE VIEW)
+   ===================================================================== */
+@media (max-width: 768px) {
+    /* 1. Мобільне меню-гамбургер */
+    .burger-btn {
+        display: flex;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid transparent;
+        box-shadow: 0 12px 24px rgba(33, 36, 61, 0.12);
+        transition: max-height 0.35s ease, padding 0.35s ease, border-color 0.35s ease;
+    }
+
+    /* Розкриття меню при натисканні на бургер */
+    .menu-toggle:checked ~ .main-nav {
+        max-height: 240px;
+        padding: 24px 20px;
+        border-bottom-color: var(--border-gray);
+    }
+
+    /* Анімація перетворення трьох ліній бургера у хрестик */
+    .menu-toggle:checked + .burger-btn .burger-line:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger-btn .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .burger-btn .burger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. Hero-секція у мобільній версії (фото зверху 174x174, текст по центру) */
+    .hero-section {
+        padding: 24px 0 56px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .hero-avatar-box {
+        order: -1;
+        justify-self: center;
+    }
+
+    .hero-avatar {
+        width: 174px;
+        height: 174px;
+        box-shadow: -4px 10px 0 var(--section-tint);
+    }
+
+    .hero-title {
+        font-size: 32px;
+        line-height: 1.25;
+        margin-bottom: 18px;
+    }
+
+    .hero-desc {
+        margin: 0 auto 26px;
+    }
+
+    /* 3. Секція Recent Posts (заголовок по центру, View all приховано) */
+    .section-top {
+        justify-content: center;
+    }
+
+    .section-heading {
+        font-size: 18px;
+    }
+
+    .view-all {
+        display: none;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .post-card {
+        padding: 20px 18px;
+    }
+
+    .post-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .post-meta {
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    /* 4. Секція Featured Works (картки у 1 колонку, картинка на всю ширину) */
+    .works-heading {
+        text-align: center;
+    }
+
+    .work-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-bottom: 24px;
+    }
+
+    .work-thumb img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .work-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .work-badges {
+        gap: 18px;
+    }
+
+    .year-pill {
+        font-size: 14px;
+    }
+
+    .category-label {
+        font-size: 16px;
+    }
+}
+
+/* Додаткове підлаштування для вузьких екранів смартфонів (< 420px) */
+@media (max-width: 420px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .figma-badge {
+        left: 16px;
+        right: 16px;
+        bottom: 12px;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .site-footer {
+        padding-bottom: 70px;
+    }
+}
