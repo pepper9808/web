@@ -1,0 +1,467 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= ВЕРХНЯ ПАНЕЛЬ ================= */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+}
+
+.back-btn {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.page-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.badge {
+    background-color: #f59e0b;
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* ================= КОНТЕЙНЕР СЦЕНИ ТА КЕРУВАННЯ ================= */
+.stage-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 16px;
+}
+
+.pause-checkbox {
+    display: none;
+}
+
+.controls-panel {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-btn {
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.control-btn:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-1px);
+}
+
+.label-play {
+    display: none;
+}
+
+.pause-checkbox:checked ~ .controls-panel .label-pause {
+    display: none;
+}
+
+.pause-checkbox:checked ~ .controls-panel .label-play {
+    display: inline;
+}
+
+/* Зупинка всіх анімацій при натисканні на паузу */
+.pause-checkbox:checked ~ .scene,
+.pause-checkbox:checked ~ .scene * {
+    animation-play-state: paused !important;
+}
+
+.source-link {
+    color: #94a3b8;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.source-link:hover {
+    color: #f8fafc;
+    text-decoration: underline;
+}
+
+/* ================= ГОЛОВНА СЦЕНА (16:9) ================= */
+.scene {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 4px solid #334155;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    image-rendering: pixelated;
+}
+
+/* 1. АНІМАЦІЯ НЕБА (День -> Захід -> Ніч -> Світанок) */
+.sky-cycle {
+    position: absolute;
+    inset: 0;
+    animation: dayNightSky 24s linear infinite;
+}
+
+@keyframes dayNightSky {
+    0%, 100% { background: linear-gradient(180deg, #38bdf8 0%, #bae6fd 75%, #fef08a 100%); }
+    35%      { background: linear-gradient(180deg, #0284c7 0%, #7dd3fc 80%, #e0f2fe 100%); }
+    55%      { background: linear-gradient(180deg, #4c1d95 0%, #db2777 55%, #fb923c 100%); }
+    75%      { background: linear-gradient(180deg, #090d16 0%, #1e1b4b 65%, #312e81 100%); }
+    90%      { background: linear-gradient(180deg, #1e3a8a 0%, #f472b6 70%, #fde047 100%); }
+}
+
+/* Сонце, що рухається по небу */
+.celestial-body {
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fef08a 30%, #facc15 70%, rgba(250, 204, 21, 0) 100%);
+    box-shadow: 0 0 35px #fde047;
+    animation: sunOrbit 24s linear infinite;
+}
+
+@keyframes sunOrbit {
+    0%   { transform: translate(0, 20px) scale(1); opacity: 1; }
+    45%  { transform: translate(350px, -20px) scale(1.05); opacity: 1; }
+    60%  { transform: translate(650px, 140px) scale(0.9); opacity: 0.4; }
+    75%  { transform: translate(400px, 260px) scale(0.8); opacity: 0; }
+    90%  { transform: translate(50px, 120px) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(0, 20px) scale(1); opacity: 1; }
+}
+
+/* Зірки, які проявляються вночі */
+.stars-layer {
+    position: absolute;
+    inset: 0 0 180px 0;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffff, transparent),
+        radial-gradient(2px 2px at 25% 12%, #ffffff, transparent),
+        radial-gradient(3px 3px at 42% 28%, #fef08a, transparent),
+        radial-gradient(2px 2px at 60% 15%, #ffffff, transparent),
+        radial-gradient(2px 2px at 78% 25%, #ffffff, transparent),
+        radial-gradient(3px 3px at 88% 10%, #bae6fd, transparent),
+        radial-gradient(2px 2px at 18% 40%, #ffffff, transparent),
+        radial-gradient(2px 2px at 72% 38%, #ffffff, transparent);
+    animation: starsOpacity 24s linear infinite;
+}
+
+@keyframes starsOpacity {
+    0%, 50%, 95%, 100% { opacity: 0; }
+    68%, 85%           { opacity: 0.95; }
+}
+
+/* 2. АНІМАЦІЯ ХМАР */
+.cloud {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    top: 48px;
+    width: 120px;
+    height: 36px;
+    animation: moveClouds 28s linear infinite;
+}
+.cloud-1::before { width: 54px; height: 54px; top: -26px; left: 18px; }
+.cloud-1::after  { width: 40px; height: 40px; top: -16px; left: 60px; }
+
+.cloud-2 {
+    top: 105px;
+    width: 95px;
+    height: 28px;
+    opacity: 0.7;
+    animation: moveClouds 38s linear infinite -12s;
+}
+.cloud-2::before { width: 42px; height: 42px; top: -20px; left: 14px; }
+.cloud-2::after  { width: 32px; height: 32px; top: -12px; left: 48px; }
+
+.cloud-3 {
+    top: 70px;
+    width: 140px;
+    height: 40px;
+    opacity: 0.8;
+    animation: moveClouds 32s linear infinite -20s;
+}
+.cloud-3::before { width: 62px; height: 62px; top: -30px; left: 22px; }
+.cloud-3::after  { width: 46px; height: 46px; top: -18px; left: 72px; }
+
+@keyframes moveClouds {
+    from { transform: translateX(1020px); }
+    to   { transform: translateX(-200px); }
+}
+
+/* 3. ПАРАЛАКС-ШАРИ (Гори -> Пагорби -> Земля) */
+.parallax-mountains {
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    width: 200%;
+    height: 190px;
+    background-repeat: repeat-x;
+    background-size: 480px 190px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 190'%3E%3Cpolygon points='0,190 110,35 220,190' fill='%23475569'/%3E%3Cpolygon points='110,35 82,75 102,70 112,82 125,70 138,76' fill='%23f8fafc'/%3E%3Cpolygon points='170,190 310,15 450,190' fill='%23334155'/%3E%3Cpolygon points='310,15 275,60 300,54 312,68 328,54 345,62' fill='%23f8fafc'/%3E%3Cpolygon points='360,190 430,85 480,190' fill='%23475569'/%3E%3C/svg%3E");
+    animation: scrollBg 42s linear infinite;
+}
+
+.parallax-hills {
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+    width: 200%;
+    height: 110px;
+    background-repeat: repeat-x;
+    background-size: 480px 110px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 110'%3E%3Cpath d='M0,110 Q120,10 240,110 T480,110 Z' fill='%2315803d'/%3E%3Cpath d='M120,110 Q260,25 400,110 Z' fill='%23166534'/%3E%3Ccircle cx='85' cy='62' r='16' fill='%2322c55e'/%3E%3Crect x='82' y='74' width='6' height='16' fill='%23713f12'/%3E%3Ccircle cx='350' cy='68' r='18' fill='%2322c55e'/%3E%3Crect x='347' y='82' width='6' height='16' fill='%23713f12'/%3E%3C/svg%3E");
+    animation: scrollBg 20s linear infinite;
+}
+
+.parallax-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 90px;
+    background-color: #78350f;
+    border-top: 14px solid #22c55e;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 36px,
+            #16a34a 36px,
+            #16a34a 48px
+        ),
+        radial-gradient(circle at 20px 35px, #92400e 4px, transparent 5px),
+        radial-gradient(circle at 75px 55px, #451a03 5px, transparent 6px);
+    background-size: 96px 14px, 120px 76px, 120px 76px;
+    background-position: 0 -14px, 0 14px, 0 14px;
+    background-repeat: repeat-x, repeat, repeat;
+    animation: scrollGround 4.5s linear infinite;
+}
+
+@keyframes scrollBg {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@keyframes scrollGround {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-480px); }
+}
+
+/* 4. ПОВІТРЯНИЙ ПОКЕМОН (Спрайт із PokemonDB + хвильовий політ) */
+.flying-pokemon-track {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    animation: flyAcross 16s linear infinite;
+}
+
+.sprite-charizard {
+    width: 96px;
+    height: 96px;
+    background-image: url("https://img.pokemondb.net/sprites/black-white/normal/charizard.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scaleX(-1); /* розвертаємо в напрямку польоту */
+    animation: hoverWave 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes flyAcross {
+    0%   { transform: translateX(-120px); }
+    100% { transform: translateX(1040px); }
+}
+
+@keyframes hoverWave {
+    from { transform: scaleX(-1) translateY(-10px); }
+    to   { transform: scaleX(-1) translateY(12px); }
+}
+
+/* 5. ГОЛОВНИЙ ПЕРСОНАЖ: ПОКАДРОВИЙ СПРАЙТ ПІКАЧУ (4 кадри через steps(4)) */
+.hero-runner {
+    position: absolute;
+    bottom: 78px;
+    left: 190px;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.pokemon-shadow {
+    position: absolute;
+    bottom: 2px;
+    width: 68px;
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    animation: shadowPulse 0.48s ease-in-out infinite alternate;
+}
+
+/* Власний 4-кадровий піксельний спрайт-лист Пікачу для 100% надійної покадрової анімації */
+.sprite-pikachu {
+    width: 96px;
+    height: 96px;
+    background-repeat: no-repeat;
+    background-size: 400% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 32'%3E%3C!-- Frame 1 --%3E%3Cg transform='translate(0,0)'%3E%3Cpolygon points='2,14 9,10 11,16 5,20' fill='%23eab308'/%3E%3Crect x='9' y='13' width='13' height='12' rx='4' fill='%23facc15'/%3E%3Crect x='13' y='7' width='11' height='10' rx='4' fill='%23facc15'/%3E%3Cpolygon points='13,8 10,1 15,6' fill='%23facc15'/%3E%3Cpolygon points='10,1 12,4 13,3' fill='%230f172a'/%3E%3Cpolygon points='20,8 23,1 23,7' fill='%23facc15'/%3E%3Cpolygon points='23,1 21,4 23,4' fill='%230f172a'/%3E%3Ccircle cx='21' cy='11' r='1.3' fill='%230f172a'/%3E%3Ccircle cx='20' cy='14' r='1.8' fill='%23ef4444'/%3E%3Crect x='10' y='24' width='4' height='5' rx='1' fill='%23ca8a04'/%3E%3Crect x='18' y='23' width='4' height='5' rx='1' fill='%23eab308'/%3E%3C/g%3E%3C!-- Frame 2 --%3E%3Cg transform='translate(32,1)'%3E%3Cpolygon points='1,12 9,9 11,15 4,18' fill='%23eab308'/%3E%3Crect x='9' y='13' width='14' height='11' rx='4' fill='%23facc15'/%3E%3Crect x='14' y='7' width='11' height='10' rx='4' fill='%23facc15'/%3E%3Cpolygon points='14,8 9,2 15,6' fill='%23facc15'/%3E%3Cpolygon points='9,2 12,4 13,3' fill='%230f172a'/%3E%3Cpolygon points='21,8 25,2 24,7' fill='%23facc15'/%3E%3Cpolygon points='25,2 22,4 24,5' fill='%230f172a'/%3E%3Ccircle cx='22' cy='11' r='1.3' fill='%230f172a'/%3E%3Ccircle cx='21' cy='14' r='1.8' fill='%23ef4444'/%3E%3Crect x='8' y='23' width='5' height='4' rx='1' fill='%23ca8a04'/%3E%3Crect x='20' y='23' width='5' height='4' rx='1' fill='%23eab308'/%3E%3C/g%3E%3C!-- Frame 3 --%3E%3Cg transform='translate(64,0)'%3E%3Cpolygon points='2,15 9,11 11,17 5,21' fill='%23eab308'/%3E%3Crect x='9' y='13' width='13' height='12' rx='4' fill='%23facc15'/%3E%3Crect x='13' y='7' width='11' height='10' rx='4' fill='%23facc15'/%3E%3Cpolygon points='13,8 11,1 16,6' fill='%23facc15'/%3E%3Cpolygon points='11,1 12,4 14,3' fill='%230f172a'/%3E%3Cpolygon points='20,8 22,1 23,7' fill='%23facc15'/%3E%3Cpolygon points='22,1 21,4 23,4' fill='%230f172a'/%3E%3Ccircle cx='21' cy='11' r='1.3' fill='%230f172a'/%3E%3Ccircle cx='20' cy='14' r='1.8' fill='%23ef4444'/%3E%3Crect x='13' y='24' width='4' height='5' rx='1' fill='%23eab308'/%3E%3Crect x='16' y='23' width='4' height='5' rx='1' fill='%23ca8a04'/%3E%3C/g%3E%3C!-- Frame 4 --%3E%3Cg transform='translate(96,-1)'%3E%3Cpolygon points='1,13 9,10 11,16 4,19' fill='%23eab308'/%3E%3Crect x='9' y='13' width='14' height='11' rx='4' fill='%23facc15'/%3E%3Crect x='14' y='7' width='11' height='10' rx='4' fill='%23facc15'/%3E%3Cpolygon points='14,8 10,2 16,6' fill='%23facc15'/%3E%3Cpolygon points='10,2 12,4 14,3' fill='%230f172a'/%3E%3Cpolygon points='21,8 24,2 24,7' fill='%23facc15'/%3E%3Cpolygon points='24,2 22,4 24,5' fill='%230f172a'/%3E%3Ccircle cx='22' cy='11' r='1.3' fill='%230f172a'/%3E%3Ccircle cx='21' cy='14' r='1.8' fill='%23ef4444'/%3E%3Crect x='11' y='23' width='5' height='5' rx='1' fill='%23eab308'/%3E%3Crect x='17' y='24' width='5' height='4' rx='1' fill='%23ca8a04'/%3E%3C/g%3E%3C/svg%3E");
+    animation:
+        runSprite 0.48s steps(4) infinite,
+        heroBounce 0.48s ease-in-out infinite alternate;
+}
+
+@keyframes runSprite {
+    from { background-position-x: 0%; }
+    to   { background-position-x: 133.3333%; }
+}
+
+@keyframes heroBounce {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-14px); }
+}
+
+@keyframes shadowPulse {
+    from { transform: scale(1); opacity: 0.4; }
+    to   { transform: scale(0.75); opacity: 0.2; }
+}
+
+/* 6. ПОКЕБОЛ, ЩО КОТИТЬСЯ НАЗУСТРІЧ */
+.pokeball-wrapper {
+    position: absolute;
+    bottom: 86px;
+    right: -60px;
+    animation: pokeballMoveX 7s linear infinite;
+}
+
+.pokeball {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #0f172a;
+    background: linear-gradient(180deg, #ef4444 0%, #ef4444 46%, #0f172a 46%, #0f172a 54%, #ffffff 54%, #ffffff 100%);
+    position: relative;
+    display: grid;
+    place-items: center;
+    animation: pokeballSpin 0.9s linear infinite;
+}
+
+.pokeball::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2.5px solid #0f172a;
+}
+
+@keyframes pokeballMoveX {
+    0%   { transform: translateX(0) translateY(0); }
+    65%  { transform: translateX(-680px) translateY(0); }
+    72%  { transform: translateX(-750px) translateY(-55px); } /* перестрибує або відскакує */
+    80%  { transform: translateX(-830px) translateY(0); }
+    100% { transform: translateX(-1080px) translateY(0); }
+}
+
+@keyframes pokeballSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
+/* 7. РЕТРО HUD-ПАНЕЛЬ У КУТІ СЦЕНИ */
+.game-hud {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.hud-box {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 2px solid #f8fafc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: #facc15;
+}
+
+.hp-bar {
+    margin-top: 6px;
+    width: 140px;
+    height: 8px;
+    background-color: #334155;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.hp-fill {
+    width: 85%;
+    height: 100%;
+    background-color: #22c55e;
+}
+
+.hud-hint {
+    background-color: rgba(15, 23, 42, 0.72);
+    color: #e2e8f0;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
