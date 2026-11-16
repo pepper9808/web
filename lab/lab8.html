@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нікіта Дзюбенко — Адаптивне портфоліо (ЛР №8)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lab8.css">
+</head>
+<body>
+
+    <!-- Фіксована плашка з посиланням на макет Figma -->
+    <div class="figma-badge">
+        <span>Макет:</span>
+        <a href="https://www.figma.com/community" target="_blank" rel="noopener noreferrer">Portfolio UI - Web &amp; Mobile ↗</a>
+    </div>
+
+    <!-- ВЕРХНЯ НАВІГАЦІЯ З МОБІЛЬНИМ БУРГЕР-МЕНЮ (Pure CSS) -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="brand-link">← На головну сайту</a>
+
+            <!-- Прихований чекбокс для відкриття/закриття мобільного меню -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="burger-btn" aria-label="Відкрити меню">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </label>
+
+            <nav class="main-nav">
+                <a href="#works" class="nav-link">Проєкти</a>
+                <a href="#posts" class="nav-link">Досягнення</a>
+                <a href="#contacts" class="nav-link">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO-СЕКЦІЯ -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">Привіт, я Нікіта,<br>Frontend-розробник</h1>
+                    <p class="hero-desc">
+                        Студент 2-го курсу спеціальності «Інженерія програмного забезпечення» (кафедра Технології Цифрового Розвитку). 
+                        Створюю сучасні, семантичні та адаптивні веб-інтерфейси за допомогою HTML5 та CSS3.
+                    </p>
+                    <a href="#works" class="btn-primary">Переглянути роботи</a>
+                </div>
+
+                <div class="hero-avatar-box">
+                    <img src="../images/avatar.jpg" alt="Нікіта Дзюбенко" class="hero-avatar">
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ "НАВЧАЛЬНИЙ ПРОГРЕС" (Recent Posts у макеті Figma) -->
+        <section id="posts" class="recent-section">
+            <div class="container">
+                <div class="section-top">
+                    <h2 class="section-heading">Навчальний прогрес</h2>
+                    <a href="../index.html" class="view-all">Усі роботи</a>
+                </div>
+
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <h3 class="post-title">Сучасна сіткова верстка: Flexbox та CSS Grid</h3>
+                        <div class="post-meta">
+                            <span>Листопад 2026</span>
+                            <span class="divider">|</span>
+                            <span>HTML5, CSS3, Layout</span>
+                        </div>
+                        <p class="post-text">
+                            Опанування побудови складних двовимірних інтерфейсів на прикладі макетів YouTube, 
+                            повнорозмірної клавіатури та інтерактивного тижневого планера.
+                        </p>
+                    </article>
+
+                    <article class="post-card">
+                        <h3 class="post-title">Адаптивна верстка за макетами Figma</h3>
+                        <div class="post-meta">
+                            <span>Листопад 2026</span>
+                            <span class="divider">|</span>
+                            <span>Responsive, Media Queries</span>
+                        </div>
+                        <p class="post-text">
+                            Адаптація компонентів інтерфейсу під смартфони, планшети та десктопи 
+                            з використанням медіа-запитів, гнучких сіток та респонсивної графіки.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ "ВИКОНАНІ РОБОТИ" (Featured Works у макеті Figma) -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <h2 class="section-heading works-heading">Виконані роботи</h2>
+
+                <div class="works-list">
+                    <!-- Робота 1 -->
+                    <article class="work-item">
+                        <a href="../pages/practice4.html" class="work-thumb">
+                            <img 
+                                src="https://placehold.co/340x230/1e293b/38bdf8?text=Fullsize+Keyboard" 
+                                srcset="https://placehold.co/340x230/1e293b/38bdf8?text=Fullsize+Keyboard 1x, https://placehold.co/680x460/1e293b/38bdf8?text=Fullsize+Keyboard+@2x 2x"
+                                alt="Fullsize клавіатура">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="../pages/practice4.html">Fullsize клавіатура на CSS Grid</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Практична робота №4</span>
+                            </div>
+                            <p class="work-desc">
+                                Складна багатосекційна сітка повнорозмірної клавіатури з об'ємними тінями клавіш, 
+                                моноширинним шрифтом JetBrains Mono та анімацією натискання кнопок.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Робота 2 -->
+                    <article class="work-item">
+                        <a href="./lab7/index.html" class="work-thumb">
+                            <img 
+                                src="https://placehold.co/340x230/0b132b/facc15?text=New+Year+Postcard" 
+                                srcset="https://placehold.co/340x230/0b132b/facc15?text=New+Year+Postcard 1x, https://placehold.co/680x460/0b132b/facc15?text=New+Year+Postcard+@2x 2x"
+                                alt="Новорічна листівка">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="./lab7/index.html">Новорічна листівка (BEM + SCSS)</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Лабораторна робота №7</span>
+                            </div>
+                            <p class="work-desc">
+                                Ізольований святковий веб-сайт за методологією BEM із використанням препроцесора SCSS, 
+                                міксінів, змінних та інтерактивного відкриття побажання.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Робота 3 -->
+                    <article class="work-item">
+                        <a href="./lab6.html" class="work-thumb">
+                            <img 
+                                src="https://placehold.co/340x230/0284c7/ffffff?text=Pokemon+Sprites" 
+                                srcset="https://placehold.co/340x230/0284c7/ffffff?text=Pokemon+Sprites 1x, https://placehold.co/680x460/0284c7/ffffff?text=Pokemon+Sprites+@2x 2x"
+                                alt="CSS Анімація спрайтів">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="./lab6.html">Анімована сцена зі спрайтами Покемонів</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Лабораторна робота №6</span>
+                            </div>
+                            <p class="work-desc">
+                                Покадрова CSS-анімація спрайт-листа через steps(), 3-шаровий паралакс фону 
+                                та динамічна зміна часу доби на чистому CSS.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ФУТЕР З КОНТАКТАМИ -->
+    <footer id="contacts" class="site-footer">
+        <div class="container footer-inner">
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://t.me/sytunerk" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a href="mailto:st3786754@stud.duikt.edu.ua">Email</a>
+            </div>
+            <p class="copyright">Copyright © 2026 Нікіта Дзюбенко. Всі права захищені.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
