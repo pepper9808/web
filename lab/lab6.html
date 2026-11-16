@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №6 — CSS-анімація зі спрайтами Покемонів</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lab6.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <a href="../index.html" class="back-btn">← На головну</a>
+        <h1 class="page-title">ЛР №6: CSS-анімація зі спрайтами</h1>
+        <span class="badge">Pure CSS @keyframes</span>
+    </header>
+
+    <main class="stage-wrapper">
+        <!-- Чекбокс для керування станом анімації (animation-play-state) на чистому CSS -->
+        <input type="checkbox" id="pause-toggle" class="pause-checkbox">
+        
+        <div class="controls-panel">
+            <label for="pause-toggle" class="control-btn">
+                <span class="label-pause">⏸ Пауза анімації</span>
+                <span class="label-play">▶ Продовжити</span>
+            </label>
+            <a href="https://pokemondb.net/sprites" target="_blank" rel="noopener noreferrer" class="source-link">
+                Джерело спрайтів: PokemonDB ↗
+            </a>
+        </div>
+
+        <!-- ГОЛОВНА АНІМОВАНА СЦЕНА -->
+        <div class="scene">
+            <!-- Шар 1: Небо зі зміною дня і ночі + сонце/місяць + зірки -->
+            <div class="sky-cycle"></div>
+            <div class="celestial-body"></div>
+            <div class="stars-layer"></div>
+
+            <!-- Шар 2: Хмари, що пливуть -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <!-- Шар 3: Далекі гори (повільний паралакс) -->
+            <div class="parallax-mountains"></div>
+
+            <!-- Шар 4: Пагорби та дерева (середній паралакс) -->
+            <div class="parallax-hills"></div>
+
+            <!-- Шар 5: Земля та трава (швидкий паралакс) -->
+            <div class="parallax-ground"></div>
+
+            <!-- Повітряний покемон у небі (анімація спрайта + хвильовий політ) -->
+            <div class="flying-pokemon-track">
+                <div class="sprite-charizard" title="Charizard (PokemonDB Sprite)"></div>
+            </div>
+
+            <!-- Головний герой на землі: Пікачу (анімація спрайт-листа + стрибки) -->
+            <div class="hero-runner">
+                <div class="pokemon-shadow"></div>
+                <div class="sprite-pikachu" title="Pikachu Sprite Animation"></div>
+            </div>
+
+            <!-- Покебол, що котиться і підстрибує назустріч -->
+            <div class="pokeball-wrapper">
+                <div class="pokeball"></div>
+            </div>
+
+            <!-- Ігровий HUD у стилі ретро-консолі -->
+            <div class="game-hud">
+                <div class="hud-box">
+                    <span class="hud-name">PIKACHU Lv.25</span>
+                    <div class="hp-bar"><div class="hp-fill"></div></div>
+                </div>
+                <div class="hud-hint">Сцена: зміна дня і ночі + 3-шаровий паралакс + покадровий спрайт</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
