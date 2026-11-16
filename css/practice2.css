@@ -1,0 +1,122 @@
+/* Оголошення палітри кольорів через CSS-змінні */
+:root {
+    --form-bg: #1e293b;
+    --form-text: #f8fafc;
+    --input-bg: #334155;
+    --input-border: #475569;
+    --accent-color: #38bdf8;
+    --accent-hover: #0284c7;
+}
+
+/* Основний контейнер форми */
+.styled-form {
+    /* a. Колір фону та тексту */
+    background-color: var(--form-bg);
+    color: var(--form-text);
+
+    /* b. Ширина та внутрішні відступи */
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 30px;
+
+    /* c. Закруглені кути та рамка */
+    border: 1px solid var(--input-border);
+    border-radius: 16px;
+
+    /* d. Тінь елемента */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+
+    /* e. Позиціонування (центрування по горизонталі + контекст для absolute-елементів) */
+    position: relative;
+    margin: 40px auto;
+}
+
+/* Декоративний бейдж із абсолютним позиціонуванням */
+.form-badge {
+    position: absolute;
+    top: -14px;
+    right: 24px;
+    background-color: var(--accent-color);
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4);
+}
+
+.form-title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 22px;
+    color: var(--accent-color);
+}
+
+.form-field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+/* Стилізація полів введення та випадаючого списку */
+.form-input {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--input-bg);
+    color: var(--form-text);
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    /* Плавний перехід при наведенні та фокусі */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Зміна стилю при наведенні курсора */
+.form-input:hover {
+    border-color: #64748b;
+}
+
+/* Зміна стилю при активному введенні тексту */
+.form-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Кнопка відправки форми */
+.form-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.form-submit:active {
+    transform: translateY(0);
+}
