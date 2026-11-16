@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №3 — YouTube Flexbox (Dark)</title>
+    <link rel="stylesheet" href="practice3.css">
+</head>
+<body>
+
+    <div class="yt-container">
+        <!-- ЛІВА БІЧНА ПАНЕЛЬ -->
+        <aside class="yt-sidebar">
+            <div class="sidebar-top">
+                <button class="circle-btn" aria-label="Меню">☰</button>
+                <a href="../index.html" class="yt-logo" title="На головну сайту">
+                    <span class="yt-badge">▶</span>
+                    <span class="yt-brand">YouTube<sup>UA</sup></span>
+                </a>
+            </div>
+
+            <nav class="sidebar-group">
+                <a href="#" class="menu-link active">
+                    <span class="menu-icon">🏠</span>
+                    <span>Головна</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">⚡</span>
+                    <span>Shorts</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">📺</span>
+                    <span>Підписки</span>
+                </a>
+            </nav>
+
+            <nav class="sidebar-group">
+                <div class="group-heading">Ви &gt;</div>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🕒</span>
+                    <span>Історія</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">📑</span>
+                    <span>Плейлисти</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🎬</span>
+                    <span>Ваші відео</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">⏳</span>
+                    <span>Переглянути пізніше</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">👍</span>
+                    <span>Відео, які сподобалися</span>
+                </a>
+            </nav>
+
+            <nav class="sidebar-group">
+                <div class="group-heading">Навігатор</div>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🔥</span>
+                    <span>Популярне</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🎵</span>
+                    <span>Музика</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🎮</span>
+                    <span>Ігри</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">📰</span>
+                    <span>Новини</span>
+                </a>
+                <a href="#" class="menu-link">
+                    <span class="menu-icon">🏆</span>
+                    <span>Спорт</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- ПРАВА ОСНОВНА ОБЛАСТЬ -->
+        <div class="yt-main">
+            <!-- Верхня панель пошуку -->
+            <header class="yt-header">
+                <div class="header-left-spacer"></div>
+                
+                <div class="search-wrapper">
+                    <form class="search-box" action="#">
+                        <input type="text" class="search-field" placeholder="Введіть запит">
+                        <button type="submit" class="search-submit" aria-label="Пошук">🔍</button>
+                    </form>
+                    <button class="voice-btn" aria-label="Голосовий пошук">🎤</button>
+                </div>
+
+                <div class="header-controls">
+                    <button class="create-btn">+ Створити</button>
+                    <button class="circle-btn" aria-label="Сповіщення">🔔</button>
+                    <div class="profile-pic">Н</div>
+                </div>
+            </header>
+
+            <!-- Панель фільтрів (тегів) -->
+            <nav class="tags-row">
+                <button class="tag-pill active">Усі</button>
+                <button class="tag-pill">Веб-розробка</button>
+                <button class="tag-pill">CSS Flexbox</button>
+                <button class="tag-pill">Ігри</button>
+                <button class="tag-pill">Музика</button>
+                <button class="tag-pill">Прямі трансляції</button>
+                <button class="tag-pill">Подкасти</button>
+                <button class="tag-pill">Програмування</button>
+                <button class="tag-pill">Огляди техніки</button>
+                <button class="tag-pill">Нещодавно завантажені</button>
+            </nav>
+
+            <!-- Сітка відео -->
+            <main class="yt-feed">
+                <section class="cards-flex-grid">
+                    <!-- Відео 1 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/0f172a/38bdf8?text=HTML5+%26+CSS3" alt="Урок CSS">
+                            <span class="time-tag">18:45</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/0284c7/ffffff?text=IT" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Повний курс з CSS Flexbox за 20 хвилин — верстка реальних макетів</h3>
+                                <p class="author-name">IT Academy UA ✔</p>
+                                <p class="meta-data">145 тис. переглядів • 2 тижні тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 2 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/1e1b4b/c084fc?text=UI%2FUX+Design" alt="UI Design">
+                            <span class="time-tag">42:10</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/7e22ce/ffffff?text=UX" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Як створюють сучасні інтерфейси: розбір трендів 2026 року</h3>
+                                <p class="author-name">Design Lab</p>
+                                <p class="meta-data">54 тис. переглядів • 5 днів тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 3 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/064e3b/34d399?text=JavaScript+ES6" alt="JS">
+                            <span class="time-tag">1:12:04</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/059669/ffffff?text=JS" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">JavaScript з нуля до першого проєкту: робота з DOM та подіями</h3>
+                                <p class="author-name">CodeUA ✔</p>
+                                <p class="meta-data">310 тис. переглядів • 3 місяці тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 4 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/450a0a/f87171?text=Git+%26+GitHub" alt="Git">
+                            <span class="time-tag">15:20</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/dc2626/ffffff?text=GH" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Git та GitHub для початківців: коміти, гілки та деплой на GitHub Pages</h3>
+                                <p class="author-name">DevOps Просто</p>
+                                <p class="meta-data">89 тис. переглядів • 1 місяць тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 5 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/1f2937/fbbf24?text=Cyberpunk+OST" alt="Музика">
+                            <span class="time-tag">2:30:00</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/d97706/ffffff?text=MW" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Lo-Fi & Synthwave мікс для програмування та навчання (Deep Focus)</h3>
+                                <p class="author-name">Music Wave</p>
+                                <p class="meta-data">2,4 млн переглядів • 8 місяців тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 6 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/172554/60a5fa?text=Tech+Review" alt="Огляд">
+                            <span class="time-tag">24:15</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/2563eb/ffffff?text=TR" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Топ ноутбуків для програмування та навчання у 2026 році</h3>
+                                <p class="author-name">Техно Огляд ✔</p>
+                                <p class="meta-data">190 тис. переглядів • 3 тижні тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 7 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/3f3f46/e4e4e7?text=Documentary" alt="Документальне">
+                            <span class="time-tag">55:40</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/52525b/ffffff?text=DOC" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Як влаштований сучасний інтернет: підводні кабелі та дата-центри</h3>
+                                <p class="author-name">Наука та Світ</p>
+                                <p class="meta-data">620 тис. переглядів • 6 місяців тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Відео 8 -->
+                    <article class="card">
+                        <div class="card-thumb">
+                            <img src="https://placehold.co/360x202/312e81/a5b4fc?text=Live+Stream" alt="Стрім">
+                            <span class="time-tag live">НАЖИВО</span>
+                        </div>
+                        <div class="card-body">
+                            <img class="author-img" src="https://placehold.co/36x36/4f46e5/ffffff?text=LV" alt="Автор">
+                            <div class="card-info">
+                                <h3 class="card-title">Прямий ефір: відповідаємо на питання студентів щодо фронтенду</h3>
+                                <p class="author-name">Frontend Community</p>
+                                <p class="meta-data">1,4 тис. глядачів</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
