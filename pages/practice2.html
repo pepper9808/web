@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №2 — Стилізація форми</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/practice2.css">
+</head>
+<body>
+
+    <header>
+        <h1>Практичне заняття №2. Основи CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">← Повернутися на головну</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Стилізована форма реєстрації</h2>
+
+            <form class="styled-form" action="https://webhook.site/ТВІЙ-УНІКАЛЬНИЙ-КОД" method="POST">
+                <!-- Елемент з абсолютним позиціонуванням відносно форми -->
+                <span class="form-badge">Реєстрація 2026</span>
+
+                <h3 class="form-title">Створення облікового запису</h3>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-first-name">Ім'я користувача:</label>
+                    <input class="form-input" type="text" id="p2-first-name" name="first_name" placeholder="Введіть ваше ім'я" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-last-name">Прізвище користувача:</label>
+                    <input class="form-input" type="text" id="p2-last-name" name="last_name" placeholder="Введіть ваше прізвище" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-email">Електронна пошта:</label>
+                    <input class="form-input" type="email" id="p2-email" name="email" placeholder="example@stud.duikt.edu.ua" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-password">Пароль:</label>
+                    <input class="form-input" type="password" id="p2-password" name="password" minlength="6" placeholder="Мінімум 6 символів" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-confirm-password">Підтвердження паролю:</label>
+                    <input class="form-input" type="password" id="p2-confirm-password" name="confirm_password" minlength="6" placeholder="Повторіть пароль" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-birth-date">Дата народження:</label>
+                    <input class="form-input" type="date" id="p2-birth-date" name="birth_date">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="p2-gender">Стать:</label>
+                    <select class="form-input" id="p2-gender" name="gender">
+                        <option value="" disabled selected>Оберіть стать</option>
+                        <option value="male">Чоловіча</option>
+                        <option value="female">Жіноча</option>
+                        <option value="other">Інша / Не вказувати</option>
+                    </select>
+                </div>
+
+                <input class="form-submit" type="submit" value="Зареєструватися">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Нікіта Дзюбенко</p>
+    </footer>
+
+</body>
+</html>
