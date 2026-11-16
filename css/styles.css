@@ -1,0 +1,94 @@
+form {
+    width: 400px;                    /* Ширина форми */
+    margin: 30px auto;               /* Позиціювання (центрування по центру сторінки) */
+    padding: 25px;                   /* Внутрішні відступи */
+    background-color: #398fe5;       /* Колір фону форми */
+    color: #333333;                  /* Колір тексту */
+    border: 1px solid #ced4da;       /* Бордер (границя) */
+    border-radius: 8px;              /* Закруглені кути */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для форми */
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #6d0909;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #2191b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #366d7d;
+}
+
+
+
+/* Стилі для форми реєстрації */
+form {
+    max-width: 450px;
+    background-color: #f9fafb;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0052a3;
+}
