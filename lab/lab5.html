@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нікіта Дзюбенко — Portfolio UI (ЛР №5)</title>
+    <!-- Шрифт Heebo, який використовується в оригінальному шаблоні Portfolio UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lab5.css">
+</head>
+<body>
+
+    <!-- Фіксована плашка з посиланням на макет Figma (position: fixed) -->
+    <div class="figma-badge">
+        <span>Макет:</span>
+        <a href="https://www.figma.com/community" target="_blank" rel="noopener noreferrer">Portfolio UI - Web &amp; Mobile ↗</a>
+    </div>
+
+    <!-- ВЕРХНЯ НАВІГАЦІЯ -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="brand-link">← На головну сайту</a>
+            <nav class="main-nav">
+                <a href="#works" class="nav-link">Проєкти</a>
+                <a href="#posts" class="nav-link">Досягнення</a>
+                <a href="#contacts" class="nav-link">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO-СЕКЦІЯ (Привітання та фото) -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">Привіт, я Нікіта,<br>Frontend-розробник</h1>
+                    <p class="hero-desc">
+                        Студент 2-го курсу спеціальності «Інженерія програмного забезпечення» (кафедра Технології Цифрового Розвитку). 
+                        Створюю сучасні, семантичні та адаптивні веб-інтерфейси за допомогою HTML5 та CSS3.
+                    </p>
+                    <a href="#works" class="btn-primary">Переглянути роботи</a>
+                </div>
+
+                <div class="hero-avatar-box">
+                    <img src="../images/avatar.jpg" alt="Нікіта Дзюбенко" class="hero-avatar">
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ "ОСТАННІ ДОСЯГНЕННЯ / КУРС" (Блакитний фон за шаблоном) -->
+        <section id="posts" class="recent-section">
+            <div class="container">
+                <div class="section-top">
+                    <h2 class="section-heading">Навчальний прогрес</h2>
+                    <a href="../index.html" class="view-all">Усі роботи</a>
+                </div>
+
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <h3 class="post-title">Сучасна сіткова верстка: Flexbox та CSS Grid</h3>
+                        <div class="post-meta">
+                            <span>Листопад 2026</span>
+                            <span class="divider">|</span>
+                            <span>HTML5, CSS3, Layout</span>
+                        </div>
+                        <p class="post-text">
+                            Опанування побудови складних двовимірних інтерфейсів на прикладі макетів YouTube, 
+                            повнорозмірної клавіатури та інтерактивного тижневого планера.
+                        </p>
+                    </article>
+
+                    <article class="post-card">
+                        <h3 class="post-title">Верстка за дизайн-макетами з Figma</h3>
+                        <div class="post-meta">
+                            <span>Листопад 2026</span>
+                            <span class="divider">|</span>
+                            <span>Figma, UI/UX, Типографіка</span>
+                        </div>
+                        <p class="post-text">
+                            Перенесення компонентів інтерфейсу з графічного редактора у валідний код зі збереженням 
+                            відступів, кольорової палітри, тіней та кастомних шрифтів.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦІЯ "ВИКОНАНІ ПРОЄКТИ" (Featured Works за шаблоном) -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <h2 class="section-heading">Виконані роботи</h2>
+
+                <div class="works-list">
+                    <!-- Робота 1 -->
+                    <article class="work-item">
+                        <a href="../pages/practice4.html" class="work-thumb">
+                            <img src="https://placehold.co/246x180/1e293b/38bdf8?text=Fullsize+Keyboard" alt="Fullsize клавіатура">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="../pages/practice4.html">Fullsize клавіатура на CSS Grid</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Практична робота №4</span>
+                            </div>
+                            <p class="work-desc">
+                                Складна багатосекційна сітка повнорозмірної клавіатури з об'ємними тінями клавіш, 
+                                моноширинним шрифтом JetBrains Mono та анімацією натискання кнопок.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Робота 2 -->
+                    <article class="work-item">
+                        <a href="./lab4.html" class="work-thumb">
+                            <img src="https://placehold.co/246x180/4a4a4a/ffffff?text=Weekly+Plan" alt="Weekly Plan">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="./lab4.html">Інтерактивний тижневий планер (Weekly Plan)</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Лабораторна робота №4</span>
+                            </div>
+                            <p class="work-desc">
+                                Гнучкий макет планера на базі CSS Grid із клікабельними чекбоксами, закресленням 
+                                виконаних завдань та полями для редагування розкладу на кожен день тижня.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Робота 3 -->
+                    <article class="work-item">
+                        <a href="./lab3.html" class="work-thumb">
+                            <img src="https://placehold.co/246x180/dc2626/ffffff?text=YouTube+Flexbox" alt="YouTube Flexbox">
+                        </a>
+                        <div class="work-info">
+                            <h3 class="work-title"><a href="./lab3.html">Клон головної сторінки YouTube</a></h3>
+                            <div class="work-badges">
+                                <span class="year-pill">2026</span>
+                                <span class="category-label">Лабораторна робота №3</span>
+                            </div>
+                            <p class="work-desc">
+                                Реалізація багатокомпонентного інтерфейсу відеохостингу за допомогою модуля CSS Flexbox: 
+                                фіксована бічна навігація, панель пошуку, фільтри тегів та адаптивна сітка карток.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ФУТЕР З КОНТАКТАМИ -->
+    <footer id="contacts" class="site-footer">
+        <div class="container footer-inner">
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="https://t.me/sytunerk" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
+                <a href="mailto:st3786754@stud.duikt.edu.ua" aria-label="Email">Email</a>
+            </div>
+            <p class="copyright">Copyright © 2026 Нікіта Дзюбенко. Всі права захищені.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
