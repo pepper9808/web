@@ -1,0 +1,41 @@
+// Основні шрифти
+$font-primary: 'Montserrat', sans-serif;
+$font-festive: 'Marck Script', cursive;
+
+// Кольорова палітра листівки
+$color-bg-deep: #0b132b;
+$color-bg-mid: #1c2541;
+$color-surface: rgba(255, 255, 255, 0.07);
+$color-border: rgba(255, 255, 255, 0.16);
+
+$color-text-main: #f8fafc;
+$color-text-muted: #cbd5e1;
+
+$color-gold: #facc15;
+$color-gold-dark: #eab308;
+$color-crimson: #ef4444;
+$color-crimson-dark: #b91c1c;
+$color-emerald: #10b981;
+$color-emerald-dark: #047857;
+$color-ice: #38bdf8;
+
+// Розміри та відступи
+$container-max: 980px;
+$radius-lg: 24px;
+$radius-md: 16px;
+$transition-base: 0.3s ease;
+
+// Словник (map) акцентних кольорів для генерації BEM-модифікаторів
+$card-accents: (
+    'gold': $color-gold,
+    'crimson': $color-crimson,
+    'emerald': $color-emerald
+);
+
+// Міксін для ефекту матового скла (glassmorphism)
+@mixin glass-panel($blur: 12px) {
+    background: $color-surface;
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid $color-border;
+}

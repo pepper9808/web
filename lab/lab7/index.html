@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Новим 2027 Роком! — Новорічна листівка (ЛР №7)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="page">
+
+    <!-- Декоративний блок снігопаду -->
+    <div class="snowfall" aria-hidden="true">
+        <span class="snowfall__flake">❄</span>
+        <span class="snowfall__flake">❅</span>
+        <span class="snowfall__flake">❆</span>
+        <span class="snowfall__flake">❄</span>
+        <span class="snowfall__flake">❅</span>
+        <span class="snowfall__flake">❆</span>
+        <span class="snowfall__flake">❄</span>
+        <span class="snowfall__flake">❅</span>
+    </div>
+
+    <!-- Шапка сторінки -->
+    <header class="header">
+        <div class="header__container">
+            <a href="../../index.html" class="header__back-link">← До списку робіт</a>
+            <span class="header__tag">ЛР №7 • BEM &amp; SCSS</span>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <main class="page__content">
+        <!-- Блок вітальної листівки -->
+        <section class="postcard">
+            <div class="postcard__decor">
+                <!-- Блок ялинки -->
+                <div class="tree">
+                    <div class="tree__star">★</div>
+                    <div class="tree__tier tree__tier--top"></div>
+                    <div class="tree__tier tree__tier--middle"></div>
+                    <div class="tree__tier tree__tier--bottom"></div>
+                    <div class="tree__trunk"></div>
+
+                    <!-- Блок гірлянди -->
+                    <div class="garland">
+                        <span class="garland__bulb garland__bulb--red"></span>
+                        <span class="garland__bulb garland__bulb--gold"></span>
+                        <span class="garland__bulb garland__bulb--blue"></span>
+                        <span class="garland__bulb garland__bulb--gold"></span>
+                        <span class="garland__bulb garland__bulb--red"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="postcard__body">
+                <span class="postcard__badge">Святкове вітання</span>
+                <h1 class="postcard__title">З Новим 2027 Роком!</h1>
+                <p class="postcard__subtitle">
+                    Нехай новий рік принесе чистий код без багів, сміливі ідеї, 
+                    мирне небо, тепло родинного затишку та здійснення найзаповітніших мрій!
+                </p>
+
+                <!-- Інтерактивний блок подарунка (чекбокс + BEM-модифікатор стану) -->
+                <div class="gift-box">
+                    <input type="checkbox" id="open-gift" class="gift-box__toggle">
+                    <label for="open-gift" class="gift-box__button">
+                        <span class="gift-box__text-closed">🎁 Відкрити новорічне побажання</span>
+                        <span class="gift-box__text-open">✨ Згорнути побажання</span>
+                    </label>
+                    <div class="gift-box__surprise">
+                        <p class="gift-box__message">
+                            «Нехай у 2027 році кожен твій проєкт стає історією успіху, 
+                            натхнення не вичерпується, а поруч завжди будуть вірні друзі!»
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція карток побажань -->
+        <section class="wishes">
+            <h2 class="wishes__heading">Три головні побажання на 2027 рік</h2>
+            <div class="wishes__grid">
+                <article class="wishes__card wishes__card--gold">
+                    <div class="wishes__icon">🌟</div>
+                    <h3 class="wishes__card-title">Натхнення та росту</h3>
+                    <p class="wishes__card-text">
+                        Підкорювати нові вершини у розробці та створювати проєкти, якими хочеться пишатися.
+                    </p>
+                </article>
+
+                <article class="wishes__card wishes__card--crimson">
+                    <div class="wishes__icon">❤️</div>
+                    <h3 class="wishes__card-title">Тепла та гармонії</h3>
+                    <p class="wishes__card-text">
+                        Нехай у домі завжди панують затишок, взаєморозуміння, щирі посмішки та радість.
+                    </p>
+                </article>
+
+                <article class="wishes__card wishes__card--emerald">
+                    <div class="wishes__icon">🎄</div>
+                    <h3 class="wishes__card-title">Миру та перемоги</h3>
+                    <p class="wishes__card-text">
+                        Світлих днів, впевненості у завтрашньому дні та здійснення найважливіших планів.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Підвал сторінки -->
+    <footer class="footer">
+        <p class="footer__copy">Створено з новорічним настроєм • Нікіта Дзюбенко, 2026–2027</p>
+    </footer>
+
+</body>
+</html>
