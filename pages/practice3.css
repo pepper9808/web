@@ -1,0 +1,357 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Кореневий Flexbox-контейнер */
+.yt-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= ЛІВЕ МЕНЮ ================= */
+.yt-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    background-color: #0f0f0f;
+    border-right: 1px solid #272727;
+}
+
+.sidebar-top {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 4px;
+}
+
+.yt-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.yt-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.yt-brand sup {
+    font-size: 10px;
+    color: #aaaaaa;
+    margin-left: 2px;
+}
+
+.sidebar-group {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #272727;
+}
+
+.group-heading {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 6px 12px;
+    color: #f1f1f1;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.menu-link:hover,
+.menu-link.active {
+    background-color: #272727;
+}
+
+.menu-link.active {
+    font-weight: 600;
+}
+
+.menu-icon {
+    width: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* ================= ПРАВА ОБЛАСТЬ ================= */
+.yt-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Шапка з пошуком */
+.yt-header {
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left-spacer {
+    width: 100px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    max-width: 620px;
+}
+
+.search-box {
+    display: flex;
+    flex: 1;
+    height: 40px;
+}
+
+.search-field {
+    flex: 1;
+    padding: 0 16px;
+    background-color: #121212;
+    color: #f1f1f1;
+    border: 1px solid #303030;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-field:focus {
+    border-color: #1c62b9;
+}
+
+.search-submit {
+    width: 64px;
+    background-color: #222222;
+    border: 1px solid #303030;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-submit:hover {
+    background-color: #303030;
+}
+
+.voice-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.voice-btn:hover {
+    background-color: #303030;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.create-btn {
+    padding: 8px 14px;
+    background-color: #222222;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.create-btn:hover {
+    background-color: #303030;
+}
+
+.circle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.circle-btn:hover {
+    background-color: #272727;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0284c7;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Рядок тегів */
+.tags-row {
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+}
+
+.tag-pill {
+    padding: 7px 12px;
+    background-color: #272727;
+    color: #f1f1f1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.tag-pill:hover {
+    background-color: #3f3f3f;
+}
+
+.tag-pill.active {
+    background-color: #f1f1f1;
+    color: #0f0f0f;
+}
+
+/* Контентна сітка карток */
+.yt-feed {
+    padding: 16px 24px 36px;
+}
+
+.cards-flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 16px;
+}
+
+.card {
+    flex: 1 1 calc(25% - 16px);
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.card-thumb {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-thumb img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.card:hover .card-thumb img {
+    transform: scale(1.03);
+}
+
+.time-tag {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.time-tag.live {
+    background-color: #cc0000;
+}
+
+.card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.author-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #f1f1f1;
+}
+
+.author-name,
+.meta-data {
+    font-size: 13px;
+    color: #aaaaaa;
+}
