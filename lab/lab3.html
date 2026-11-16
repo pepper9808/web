@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №3 — YouTube Flexbox</title>
+    <link rel="stylesheet" href="lab3.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <!-- ЛІВА ПАНЕЛЬ (Синя рамка) -->
+        <aside class="sidebar">
+            <!-- Блок 1: Логотип -->
+            <div class="sidebar-header">
+                <button class="icon-btn" aria-label="Меню">☰</button>
+                <a href="../index.html" class="logo" title="Повернутися на головну портфоліо">
+                    <span class="logo-icon">▶</span>
+                    <span class="logo-text">Premium<sup>UA</sup></span>
+                </a>
+            </div>
+
+            <!-- Блок 2: Головна навігація -->
+            <nav class="sidebar-section">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Головна</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚡</span>
+                    <span>YouTube Shorts</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📺</span>
+                    <span>Підписки</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🎵</span>
+                    <span>YouTube Music</span>
+                </a>
+            </nav>
+
+            <!-- Блок 3: Розділ "Ви" -->
+            <nav class="sidebar-section">
+                <div class="section-title">Ви &gt;</div>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Ваш канал</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🕒</span>
+                    <span>Історія</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🎬</span>
+                    <span>Ваші відео</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⏳</span>
+                    <span>Переглянути пізніше</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⬇️</span>
+                    <span>Завантаження</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⌄</span>
+                    <span>Показати більше</span>
+                </a>
+            </nav>
+
+            <!-- Блок 4: Підписки -->
+            <nav class="sidebar-section">
+                <div class="section-title">Підписки</div>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #2563eb;">W</span>
+                    <span class="nav-text">WAS: Популярна...</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #7c3aed;">T</span>
+                    <span class="nav-text">TheDRZJ</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #16a34a;">R</span>
+                    <span class="nav-text">ROZETKA</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #ea580c;">А</span>
+                    <span class="nav-text">Алексей Макар...</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #059669;">G</span>
+                    <span class="nav-text">ROZETKA GAME...</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="sub-avatar" style="background: #dc2626;">К</span>
+                    <span class="nav-text">Клятий раціона...</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⌄</span>
+                    <span>Показати ще 24</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- ПРАВА ЧАСТИНА -->
+        <div class="main-wrapper">
+            <!-- Верхня шапка (Чорна рамка) -->
+            <header class="topbar">
+                <div class="topbar-spacer"></div>
+                <div class="search-area">
+                    <form class="search-form" action="#">
+                        <input type="text" class="search-input" placeholder="Пошук">
+                        <button type="submit" class="search-btn" aria-label="Пошук">🔍</button>
+                    </form>
+                    <button class="mic-btn" aria-label="Голосовий пошук">🎤</button>
+                </div>
+                <div class="user-actions">
+                    <button class="icon-btn" title="Створити">📹</button>
+                    <button class="icon-btn" title="Сповіщення">🔔</button>
+                    <div class="user-avatar">Н</div>
+                </div>
+            </header>
+
+            <!-- Смуга категорій (Червона рамка) -->
+            <nav class="categories-bar">
+                <button class="chip active">Усі</button>
+                <button class="chip">Ігри</button>
+                <button class="chip">Музика</button>
+                <button class="chip">Пряма трансляція</button>
+                <button class="chip">Новини</button>
+                <button class="chip">Пригодницький бойовик</button>
+                <button class="chip">Образотворчі мистецтва</button>
+                <button class="chip">Мультфільми</button>
+                <button class="chip">Нещодавні завантаження</button>
+                <button class="chip">Ви дивилися</button>
+            </nav>
+
+            <!-- Контент: Сітка відео + Shorts -->
+            <main class="content">
+                <!-- Основна сітка відео (4 в ряд) -->
+                <section class="videos-grid">
+                    <!-- Картка 1 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/1e293b/ffffff?text=Video+1" alt="Прев'ю відео 1">
+                            <span class="duration">12:30</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/15803d/ffffff?text=ЕП" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Як збільшився борг України за час великої війни? | Економічна...</h3>
+                                <p class="channel-name">Економічна правда</p>
+                                <p class="video-stats">78 тис. переглядів • 1 місяць тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 2 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/334155/ffffff?text=Video+2" alt="Прев'ю відео 2">
+                            <span class="duration">32:08</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/ca8a04/ffffff?text=LU" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Що Бісить Журналістку | Марія Малевська</h3>
+                                <p class="channel-name">LUKI</p>
+                                <p class="video-stats">70 тис. переглядів • 4 місяці тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 3 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/78350f/ffffff?text=Video+3" alt="Прев'ю відео 3">
+                            <span class="duration">26:47</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/0284c7/ffffff?text=RT" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Історія стародавнього світу: цікаві факти та дослідження</h3>
+                                <p class="channel-name">Науковий канал</p>
+                                <p class="video-stats">276 тис. переглядів • 11 місяців тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 4 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/eab308/000000?text=Video+4" alt="Прев'ю відео 4">
+                            <span class="duration">4:46</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/2563eb/ffffff?text=HA" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">How to Get Stuff Done When You Have ADHD</h3>
+                                <p class="channel-name">How to ADHD ✔</p>
+                                <p class="video-stats">1,2 млн переглядів • 7 років тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 5 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/0f172a/ffffff?text=Video+5" alt="Прев'ю відео 5">
+                            <span class="duration">23:59</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/111827/ffffff?text=BI" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Нове розслідування журналістів: деталі та факти</h3>
+                                <p class="channel-name">BIHUS Info ✔</p>
+                                <p class="video-stats">90 тис. переглядів • 1 день тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 6 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/1d4ed8/ffffff?text=Video+6" alt="Прев'ю відео 6">
+                            <span class="duration">30:18</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/000000/ffffff?text=HL" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Neo-Brutalism: The Rising Design Trend in Web Development</h3>
+                                <p class="channel-name">Halo Lab</p>
+                                <p class="video-stats">242 перегляди • 1 день тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 7 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/64748b/ffffff?text=Video+7" alt="Прев'ю відео 7">
+                            <span class="duration">7:03</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/dc2626/ffffff?text=ЛП" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Інтерв'ю та роздуми про сучасну українську культуру</h3>
+                                <p class="channel-name">Культурний простір</p>
+                                <p class="video-stats">434 тис. переглядів • 5 років тому</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Картка 8 -->
+                    <article class="video-card">
+                        <div class="thumbnail-box">
+                            <img src="https://placehold.co/360x202/94a3b8/000000?text=Video+8" alt="Прев'ю відео 8">
+                            <span class="duration">20:19</span>
+                        </div>
+                        <div class="video-details">
+                            <img class="channel-avatar" src="https://placehold.co/36x36/4f46e5/ffffff?text=OP" alt="Канал">
+                            <div class="video-meta">
+                                <h3 class="video-title">Unveiling the Amazing Secret for Drawing the Perfect Portrait</h3>
+                                <p class="channel-name">One pencil tutorial</p>
+                                <p class="video-stats">1,3 млн переглядів • 3 місяці тому</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Секція YouTube Shorts -->
+                <section class="shorts-section">
+                    <div class="shorts-header">
+                        <h2>⚡ YouTube Shorts</h2>
+                        <button class="icon-btn" aria-label="Закрити">✕</button>
+                    </div>
+                    <div class="shorts-grid">
+                        <article class="short-card">
+                            <img src="https://placehold.co/220x380/334155/ffffff?text=Short+1" alt="Short 1">
+                            <h4 class="short-title">Цікавий факт за 60 секунд</h4>
+                            <p class="video-stats">120 тис. переглядів</p>
+                        </article>
+                        <article class="short-card">
+                            <img src="https://placehold.co/220x380/475569/ffffff?text=Short+2" alt="Short 2">
+                            <h4 class="short-title">Огляд нового гаджета</h4>
+                            <p class="video-stats">85 тис. переглядів</p>
+                        </article>
+                        <article class="short-card">
+                            <img src="https://placehold.co/220x380/1e293b/ffffff?text=Short+3" alt="Short 3">
+                            <h4 class="short-title">Лайфхак для верстки на CSS</h4>
+                            <p class="video-stats">310 тис. переглядів</p>
+                        </article>
+                        <article class="short-card">
+                            <img src="https://placehold.co/220x380/0f172a/ffffff?text=Short+4" alt="Short 4">
+                            <h4 class="short-title">Подорож Карпатами влітку</h4>
+                            <p class="video-stats">42 тис. переглядів</p>
+                        </article>
+                        <article class="short-card">
+                            <img src="https://placehold.co/220x380/374151/ffffff?text=Short+5" alt="Short 5">
+                            <h4 class="short-title">Розпакування посилки</h4>
+                            <p class="video-stats">19 тис. переглядів</p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
