@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №1 - Розклад занять</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+        }
+        /* Чіткі лінії для всіх комірок таблиці */
+        th, td {
+            border: 1px solid #70a1ff;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        /* Стиль для шапки таблиці (дати) */
+        th {
+            background-color: #5bc0de;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #ffffff;
+        }
+        /* Стиль для стовпця з часом та днями */
+        .time-col {
+            background-color: #5bc0de;
+            color: white;
+            font-weight: bold;
+            width: 110px;
+            border: 1px solid #ffffff;
+        }
+
+        .lect {
+            background-color: #cfb220; /* Жовтуватий для лекцій */
+        }
+        .prac {
+            background-color: #40c60b; /* Зеленуватий для практичних */
+        }
+        .lab {
+            background-color: #038ace; /* Блакитний для лабораторних */
+        }
+        .sem {
+            background-color: #f37979; /* Рожеватий для семінарів */
+        }
+        .empty {
+            background-color: #454444; /* Сірий для порожніх дат */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сторінки -->
+    <header>
+        <h1>Практична робота №1</h1>
+        <nav>
+            <p><a href="../index.html">← На головну сторінку</a></p>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Розклад занять групи</h2>
+
+            <!-- Таблиця розкладу -->
+            <table>
+              <thead>
+                    <tr>
+                        <th>Пн</th>
+                        <th>19.10.2026</th>
+                        <th>26.10.2026</th>
+                        <th>02.11.2026</th>
+                        <th>09.11.2026</th>
+                        <th>16.11.2026</th>
+                    </tr>
+                </thead>  
+                <tbody>
+                    <!-- ПОНЕДІЛОК -->
+                    <tr>
+                        <td class="time-col"><br>2 пара<br>09:30-10:50</td>
+                        <td class="empty"></td>
+                        <td class="lect"><strong>УМ-2022[Лк]</strong><br>ауд. Дистанц.<br>Даниленко Л.В.</td>
+                        <td class="lect"><strong>JJG-15[Лк]</strong><br>ауд. Дистанц.<br>Гавор А.С.</td>
+                        <td class="lect"><strong>УМ-2022[Лк]</strong><br>ауд. Дистанц.<br>Даниленко Л.В.</td>
+                        <td class="lect"><strong>JJG-15[Лк]</strong><br>ауд. Дистанц.<br>Гавор А.С.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">3 пара<br>11:10-12:30</td>
+                        <td class="empty"></td>
+                        <td class="lect"><strong>ВМ[Лк]</strong><br>ауд. Дистанц.<br>Білоусова С.В.</td>
+                        <td></td>
+                        <td class="lect"><strong>ВМ[Лк]</strong><br>ауд. Дистанц.<br>Білоусова С.В.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">4 пара<br>12:40-14:00</td>
+                        <td class="empty"></td>
+                        <td class="lect"><strong>ФЛ[Лк]</strong><br>ауд. Дистанц.<br>Кошетар У.П.</td>
+                        <td></td>
+                        <td class="lect"><strong>ФЛ[Лк]</strong><br>ауд. Дистанц.<br>Кошетар У.П.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">6 пара<br>15:40-17:00</td>
+                        <td class="empty"></td>
+                        <td></td>
+                        <td class="lect"><strong>СП-2024[Лк]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                        <td></td>
+                        <td class="lect"><strong>СП-2024[Лк]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                    </tr>
+
+                    <!-- ВІВТОРОК -->
+
+                    <thead>
+                    <tr>
+                        <th>Вт</th>
+                        <th>20.10.2026</th>
+                        <th>27.10.2026</th>
+                        <th>03.11.2026</th>
+                        <th>10.11.2026</th>
+                        <th>17.11.2026</th>
+                    </tr>
+                </thead>
+
+                    <tr>
+                        <td class="time-col"><br>1 пара<br>08:00-09:20</td>
+                        <td class="empty"></td>
+                        <td></td>
+                        <td class="prac"><strong>JJG-15[Пз]</strong><br>ауд. 310<br>Гавор А.С.</td>
+                        <td></td>
+                        <td class="prac"><strong>JJG-15[Пз]</strong><br>ауд. 310<br>Гавор А.С.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">2 пара<br>09:30-10:50</td>
+                        <td class="empty"></td>
+                        <td class="prac"><strong>ФВ[Пз]</strong><br>ауд. Стадіон<br>Двірник В.Г.</td>
+                        <td class="lab"><strong>JJG-15[Лб]</strong><br>ауд. 326<br>Гавор А.С.</td>
+                        <td class="prac"><strong>ФВ[Пз]</strong><br>ауд. Стадіон<br>Двірник В.Г.</td>
+                        <td class="lab"><strong>JJG-15[Лб]</strong><br>ауд. 326<br>Гавор А.С.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">3 пара<br>11:10-12:30</td>
+                        <td class="empty"></td>
+                        <td class="prac"><strong>АМПК-2026[Пз]</strong><br>ауд. 320<br>Харицька С.В.</td>
+                        <td class="prac"><strong>АМПК-2026[Пз]</strong><br>ауд. 320<br>Харицька С.В.</td>
+                        <td class="prac"><strong>АМПК-2026[Пз]</strong><br>ауд. 320<br>Харицька С.В.</td>
+                        <td class="prac"><strong>АМПК-2026[Пз]</strong><br>ауд. 320<br>Харицька С.В.</td>
+                    </tr>
+
+                    <!-- СЕРЕДА -->
+
+                    <thead>
+                    <tr>
+                        <th>Ср</th>
+                        <th>21.10.2026</th>
+                        <th>28.10.2026</th>
+                        <th>04.11.2026</th>
+                        <th>11.11.2026</th>
+                        <th>18.11.2026</th>
+                    </tr>
+                </thead>
+
+                    <tr>
+                        <td class="time-col"><br>1 пара<br>08:00-09:20</td>
+                        <td class="empty"></td>
+                        <td class="prac"><strong>WEB тех.-2016[Пз]</strong><br>ауд. 211<br>Дзюба В.В.</td>
+                        <td class="lab"><strong>WEB тех.-2016[Лб]</strong><br>ауд. 211<br>Дзюба В.В.</td>
+                        <td class="prac"><strong>WEB тех.-2016[Пз]</strong><br>ауд. 211<br>Дзюба В.В.</td>
+                        <td class="lab"><strong>WEB тех.-2016[Лб]</strong><br>ауд. 211<br>Дзюба В.В.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">2 пара<br>09:30-10:50</td>
+                        <td class="empty"></td>
+                        <td class="prac"><strong>УМ-2022[Пз]</strong><br>ауд. 301<br>Даниленко Л.В.</td>
+                        <td class="prac"><strong>ВМ[Пз]</strong><br>ауд. 512<br>Варшамов А.В.</td>
+                        <td class="prac"><strong>УМ-2022[Пз]</strong><br>ауд. 301<br>Даниленко Л.В.</td>
+                        <td class="prac"><strong>ВМ[Пз]</strong><br>ауд. 512<br>Варшамов А.В.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">3 пара<br>11:10-12:30</td>
+                        <td class="empty"></td>
+                        <td class="sem"><strong>ФЛ[Сем]</strong><br>ауд. 0-13<br>Кошетар У.П.</td>
+                        <td class="prac"><strong>ВМ[Пз]</strong><br>ауд. 519<br>Варшамов А.В.</td>
+                        <td class="sem"><strong>ФЛ[Сем]</strong><br>ауд. 0-13<br>Кошетар У.П.</td>
+                        <td class="prac"><strong>ВМ[Пз]</strong><br>ауд. 519<br>Варшамов А.В.</td>
+                    </tr>
+
+                    <!-- ЧЕТВЕР -->
+
+                    <thead>
+                    <tr>
+                        <th>Чт</th>
+                        <th>22.10.2026</th>
+                        <th>29.10.2026</th>
+                        <th>05.11.2026</th>
+                        <th>12.11.2026</th>
+                        <th>19.11.2026</th>
+                    </tr>
+                </thead>
+
+                    <tr>
+                        <td class="time-col"><br>1 пара<br>08:00-09:20</td>
+                        <td class="empty"></td>
+                        <td class="lect"><strong>WEB тех.-2016[Лк]</strong><br>ауд. Дистанц.<br>Дзюба В.В.</td>
+                        <td class="lab"><strong>ВМ[Лб т.16/з.9]</strong><br>ауд. 517<br>Олімпієва Ю.І.</td>
+                        <td class="lect"><strong>WEB тех.-2016[Лк]</strong><br>ауд. Дистанц.<br>Дзюба В.В.</td>
+                        <td class="lab"><strong>ВМ[Лб t.16/з.3]</strong><br>ауд. 517<br>Олімпієва Ю.І.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">2 пара<br>09:30-10:50</td>
+                        <td class="empty"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="prac"><strong>ВМ[Пз]</strong><br>ауд. 521<br>Варшамов А.В.</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">3 пара<br>11:10-12:30</td>
+                        <td class="empty"></td>
+                        <td class="lab"><strong>СП-2024[Лб]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                        <td class="prac"><strong>СП-2024[Пз]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                        <td class="lab"><strong>СП-2024[Лб]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                        <td class="prac"><strong>СП-2024[Пз]</strong><br>ауд. Дистанц.<br>Ганенко Л.Д.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+</body>
+</html>
